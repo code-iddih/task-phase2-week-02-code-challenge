@@ -1,38 +1,64 @@
-.App {
+.app {
+  font-family: Arial, sans-serif;
+}
+
+.header {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bot-collection, .my-bot-army {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.bot-collection-grid, .my-bot-army-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.bot-card {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.remove-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.bot-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.bot-stats {
+  margin: 10px 0;
+}
+
+.bar {
+  height: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
 }
