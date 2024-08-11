@@ -24,7 +24,7 @@ function App() {
     }
   };
 
-  //Rmoving the array from MyArmyCollecton to BotCollection
+  //Rmoving the bot from MyArmyCollecton to BotCollection
   const removeFromArmy = (bot) => {
     setMyBotArmy(myBotArmy.filter(b => b.id !== bot.id));
     setBots([...bots, bot]);
@@ -36,7 +36,7 @@ function App() {
     setMyBotArmy(myBotArmy.filter(b => b.id !== bot.id));
   };
   
-  // Structure
+  // What to return
   return (
     <div className="app">
       <header className="header">
