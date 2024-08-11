@@ -1,8 +1,7 @@
 import React from 'react';
 import BotCard from './BotCard';
 
-// Function to displays the collection of bots
-
+// Function to display the collection of bots
 const BotCollection = ({ bots, onAddToArmy, onRemoveFromCollection }) => {
   return (
     <div className="bot-collection-grid">

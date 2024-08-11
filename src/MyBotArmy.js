@@ -1,17 +1,17 @@
 import React from 'react';
 import BotCard from './BotCard';
 
-//Function to dsplay my Army Bots
+// Function to display MyBotArmy
 const MyBotArmy = ({ bots, onRemoveFromArmy }) => {
   return (
-    //.map method helps to iterate through every bot
     <div className="my-bot-army-grid">
       {bots.map(bot => (
         <BotCard 
           key={bot.id} 
           bot={bot} 
-          onAddToArmy={() => {}} 
+          onAddToArmy={() => {}} // Empty function as we do not need to add the bot again
           onRemoveFromCollection={onRemoveFromArmy} 
+          isInArmy={true} // Checks if the bot is already included
         />
       ))}
     </div>
