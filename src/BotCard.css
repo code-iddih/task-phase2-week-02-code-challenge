@@ -1,10 +1,14 @@
 .bot-card {
-  background: #fff;
+  background: #a09999;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 10px;
   text-align: center;
   position: relative;
+}
+
+.bot-card:hover {
+  transform: translateY(-10px);
 }
 
 .bot-avatar {
