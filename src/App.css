@@ -6,8 +6,8 @@ body {
 }
 
 .header {
-  background-color: grey;
-  color: black;
+  background-color: black;
+  color: white;
   padding: 20px;
   text-align: center;
 }
@@ -33,7 +33,7 @@ body {
 .my-bot-army h2 {
   text-align: center;
   margin-bottom: 20px;
-  background-color: black;
+  background-color: red;
   color: white;
   padding: 5px;
 }
