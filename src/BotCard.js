@@ -11,7 +11,7 @@ const BotCard = ({ bot, onAddToArmy, onRemoveFromCollection, isInArmy = false })
       )}
       <img src={bot.avatar_url} alt={bot.name} />
       <h3>{bot.name}</h3>
-      <p>Class: {bot.bot_class}</p>
+      <p>Class: <strong>{bot.bot_class}</strong></p>
       <div className="bot-stats">
         <div className="stat">
           <label>Health:</label>
