@@ -4,12 +4,12 @@ import MyBotArmy from './MyBotArmy';
 import './App.css';
 
 function App() {
-  // The state which will store fetched data from db.json
+  // the state which will store fetched data from db.json
   const [bots, setBots] = useState([]);
   // The state which will store the bots added to MyBotArmy
   const [myBotArmy, setMyBotArmy] = useState([]);
 
-  // Fetching data from db.json using the useEffect hook
+  // fetching data from db.json using the useEffect hook
   useEffect(() => {
     fetch('http://localhost:3000/bots')
       .then(response => response.json())
@@ -17,24 +17,24 @@ function App() {
       .catch(error => console.error('Error fetching bots:', error));
   }, []);
 
-  // Adding a bot to MyBotArmy
+  // Addin a bot to myArmyCollection
   const addToArmy = (bot) => {
     if (!myBotArmy.find(b => b.id === bot.id)) {
       setMyBotArmy([...myBotArmy, bot]);
     }
   };
 
-  // Removing the bot from MyBotArmy
+  // Removing the bot from MyArmyCollection
   const removeFromArmy = (bot) => {
     setMyBotArmy(myBotArmy.filter(b => b.id !== bot.id));
   };
-
-  // Removing a bot from BotCollection and MyBotArmy entirely
+  
+  // Removing a bot from both collections
   const removeFromCollection = (bot) => {
     setBots(bots.filter(b => b.id !== bot.id));
     setMyBotArmy(myBotArmy.filter(b => b.id !== bot.id));
   };
-
+  
   // What to return
   return (
     <div className="app">

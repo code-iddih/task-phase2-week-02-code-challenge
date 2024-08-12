@@ -102,7 +102,6 @@ h2 {
 }
 
 .action-button {
-  background-color: #333;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -110,6 +109,18 @@ h2 {
   cursor: pointer;
 }
 
-.action-button:hover {
-  background-color: #555;
+.bot-collection .action-button {
+  background-color: green;
+}
+
+.bot-collection .action-button:hover {
+  background-color: rgb(10, 85, 10);
+}
+
+.my-bot-army .action-button {
+  background-color: red;
+}
+
+.my-bot-army .action-button:hover {
+  background-color: darkred;
 }
