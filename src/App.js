@@ -9,7 +9,7 @@ function App() {
   // The state which will store the bots added to MyBotArmy
   const [myBotArmy, setMyBotArmy] = useState([]);
 
-  // fetching data from db.json using the useEffect hook
+  // fetching data from db.json uisng the useEffect hook
   useEffect(() => {
     fetch('http://localhost:3000/bots')
       .then(response => response.json())
@@ -35,7 +35,7 @@ function App() {
     setMyBotArmy(myBotArmy.filter(b => b.id !== bot.id));
   };
   
-  // What to return
+  // Return Structure
   return (
     <div className="app">
       <header className="header">
