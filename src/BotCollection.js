@@ -1,5 +1,6 @@
 import React from 'react';
 import BotCard from './BotCard';
+import './BotCollection.css';
 
 // Function to display the collection of bots
 const BotCollection = ({ bots, onAddToArmy, onRemoveFromCollection }) => {

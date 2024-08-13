@@ -1,5 +1,6 @@
 import React from 'react';
 import BotCard from './BotCard';
+import './MyBotArmy.css';
 
 // Function to display my Army Bots
 const MyBotArmy = ({ bots, onRemoveFromArmy }) => {

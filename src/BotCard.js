@@ -1,47 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './BotCard.css';
 
-// Function to display individual bot cards
-const BotCard = ({ bot, onAddToArmy, onRemoveFromCollection, isInArmy = false }) => {
+// Function to display each bot card
+const BotCard = ({ bot, onAddToArmy, onRemoveFromCollection, isInArmy }) => {
+  const [showDetails, setShowDetails] = useState(false);
+
+  // Toggling the visibility of bot details
+  const handleToggleDetails = () => {
+    setShowDetails(!showDetails);
+  };
+
   return (
     <div className="bot-card">
-      {!isInArmy && (
-        <button className="remove-button" onClick={() => onRemoveFromCollection(bot)}>
-          X
-        </button>
-      )}
-      <img src={bot.avatar_url} alt={bot.name} />
+      <img src={bot.avatar_url} alt={bot.name} className="bot-avatar" />
       <h3>{bot.name}</h3>
-      <p>Class: <strong>{bot.bot_class}</strong></p>
-      <div className="bot-stats">
-        <div className="stat">
-          <label>Health:</label>
-          <div className={`stat-bar ${getBarColor(bot.health)}`} style={{ width: `${bot.health}%` }}></div>
-        </div>
-        <div className="stat">
-          <label>Damage:</label>
-          <div className={`stat-bar ${getBarColor(bot.damage)}`} style={{ width: `${bot.damage}%` }}></div>
-        </div>
-        <div className="stat">
-          <label>Armor:</label>
-          <div className={`stat-bar ${getBarColor(bot.armor)}`} style={{ width: `${bot.armor}%` }}></div>
-        </div>
-      </div>
-      <button 
-        className="action-button" 
-        onClick={() => isInArmy ? onRemoveFromCollection(bot) : onAddToArmy(bot)}
-      >
-        {isInArmy ? 'Release' : 'Add to Army'}
+      <p>Health: {bot.health}</p>
+      {/* Button to toggle details view */}
+      <button onClick={handleToggleDetails}>
+        {showDetails ? 'Hide Details' : 'Show Details'}
       </button>
+      {showDetails && (
+        <div className="bot-details">
+          <p>Damage: {bot.damage}</p>
+          <p>Armor: {bot.armor}</p>
+          <p>Class: {bot.bot_class}</p>
+          <p>Catchphrase: {bot.catchphrase}</p>
+          <p>Created At: {bot.created_at}</p>
+          <p>Updated At: {bot.updated_at}</p>
+        </div>
+      )}
+      {isInArmy ? (
+        <button onClick={() => onRemoveFromCollection(bot)}>Remove from Army</button>
+      ) : (
+        <button onClick={() => onAddToArmy(bot)}>Add to Army</button>
+      )}
     </div>
   );
-};
-
-// Helper function to determine the bar color based on the value
-const getBarColor = (value) => {
-  if (value >= 76) return 'green';
-  if (value >= 51) return 'blue';
-  if (value >= 26) return 'orange';
-  return 'red';
 };
 
 export default BotCard;
