@@ -10,7 +10,7 @@ const BotCard = ({ bot, onAddToArmy, onRemoveFromCollection, onRemoveFromArmy, i
     setShowDetails(!showDetails);
   };
 
-  // Handle removal from collection
+  // Handle removal from collection or army
   const handleRemove = () => {
     if (isInArmy) {
       onRemoveFromArmy(bot); // Remove from army if present in army
@@ -23,26 +23,33 @@ const BotCard = ({ bot, onAddToArmy, onRemoveFromCollection, onRemoveFromArmy, i
     <div className="bot-card">
       <img src={bot.avatar_url} alt={bot.name} className="bot-avatar" />
       <h3>{bot.name}</h3>
-      <p>Health: {bot.health}</p>
+      <p>Class: <strong>{bot.bot_class}</strong></p>
+
       {/* Button to toggle details view */}
       <button onClick={handleToggleDetails}>
         {showDetails ? 'Hide Details' : 'Show Details'}
       </button>
+
+      {/* Bot details section */}
       {showDetails && (
         <div className="bot-details">
+          <p>Health: {bot.health}</p>
           <p>Damage: {bot.damage}</p>
           <p>Armor: {bot.armor}</p>
-          <p>Class: {bot.bot_class}</p>
           <p>Catchphrase: {bot.catchphrase}</p>
           <p>Created At: {bot.created_at}</p>
           <p>Updated At: {bot.updated_at}</p>
         </div>
       )}
+
+      {/* Conditional rendering for add or remove buttons */}
       {isInArmy ? (
-        <button onClick={() => onRemoveFromArmy(bot)}>Remove from Army</button>
+        <button className="remove-from-army-button" onClick={() => onRemoveFromArmy(bot)}>Release</button>
       ) : (
         <button onClick={() => onAddToArmy(bot)}>Add to Army</button>
       )}
+
+      {/* Red "X" button to remove bot */}
       {!isInArmy && (
         <button className="remove-button" onClick={handleRemove}>
           X
