@@ -1,4 +1,54 @@
-# Getting Started with Create React App
+# Bot Battlr
+
+Welcome to Bot Battlr, the one and only spot in the known universe where you can custom-build your own Bot Army! This project aims to help me practice and implement components, props, state, events, and data fetching in React.
+
+## Learning Goals
+
+Practice using components, props, state, events, and data fetching in React.\
+Improve the ability to follow instructions and work within an established codebase.
+
+## Project Overview
+
+In this project, I will develop a React application that displays a list of available bots. The goal is to create a user interface that allows a galactic overlord to browse through the list of robots, view their details, and enlist a bot into their army.
+
+## Features
+
+Browse and view profiles of all bots.\
+Add individual bots to the user's army.\
+Release bots from the user's army.\
+Permanently discharge bots from service.
+
+## Project Guidelines
+
+Use React for building the front-end application.\
+Fetch data from the JSON server.\
+Implement the application's functionality as per the provided instructions.
+
+## Core Deliverables
+As a user, I should be able to:
+
+### View Bot Profiles:
+
+See profiles of all bots rendered in BotCollection.
+
+### Enlist Bots:
+
+Add an individual bot to my army by clicking on it. The selected bot should render in the MyBotArmy component. The bot can be enlisted only once. The bot does not disappear from the BotCollection.
+
+### Release Bots:
+
+Release a bot from my army by clicking on it. The bot disappears from the MyBotArmy component.
+
+### Discharge Bots:
+
+Discharge a bot from their service forever by clicking the red button marked "x". This action deletes the bot both from the backend and from the MyBotArmy on the frontend.
+
+## Technologies Used
+
+React.\
+JSON Server.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
