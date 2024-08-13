@@ -12,7 +12,7 @@ const BotCollection = ({ bots, onAddToArmy, onRemoveFromCollection }) => {
           bot={bot} 
           onAddToArmy={onAddToArmy} 
           onRemoveFromCollection={onRemoveFromCollection} 
-          isInArmy={false} // Indicate that this bot is in the collection
+          isInArmy={false} 
         />
       ))}
     </div>
