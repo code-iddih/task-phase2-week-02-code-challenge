@@ -5,7 +5,6 @@
   padding: 10px;
   text-align: center;
   position: relative;
-  overflow: hidden;
 }
 
 .bot-card:hover {
@@ -70,8 +69,18 @@ button:hover {
   cursor: pointer;
 }
 
-.remove-button:hover {
-  background: darkred;
+.remove-from-army-button {
+  background-color: #ff4d4d; 
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.remove-from-army-button:hover {
+  background-color: #cc0000; 
 }
 
 span {
