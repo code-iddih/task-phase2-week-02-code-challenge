@@ -13,8 +13,8 @@ const MyBotArmy = ({ bots, onRemoveFromArmy, onRemoveFromCollection }) => {
           bot={bot} 
           onAddToArmy={() => {}} 
           onRemoveFromCollection={onRemoveFromCollection} 
-          onRemoveFromArmy={onRemoveFromArmy} // Pass the handler to remove the bot from the army
-          isInArmy={true} // Indicate that this bot is in the army
+          onRemoveFromArmy={onRemoveFromArmy} 
+          isInArmy={true}
         />
       ))}
     </div>
