@@ -21,14 +21,14 @@ function App() {
       .catch(error => console.error('Error fetching bots:', error));
   }, []);
 
-  // Adding a bot to myArmyCollection
+  // Adding a bot to MyBotArmy
   const addToArmy = (bot) => {
     if (!myBotArmy.find(b => b.id === bot.id)) {
       setMyBotArmy([...myBotArmy, bot]);
     }
   };
 
-  // Removing the bot from MyArmyCollection
+  // Removing the bot from MyBotArmy
   const removeFromArmy = (bot) => {
     setMyBotArmy(myBotArmy.filter(b => b.id !== bot.id));
   };
@@ -93,6 +93,7 @@ function App() {
           <MyBotArmy
             bots={myBotArmy}
             onRemoveFromArmy={removeFromArmy}
+            onRemoveFromCollection={removeFromCollection} // Pass the handler to remove from collection
           />
         </div>
       </div>

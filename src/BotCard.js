@@ -2,12 +2,21 @@ import React, { useState } from 'react';
 import './BotCard.css';
 
 // Function to display each bot card
-const BotCard = ({ bot, onAddToArmy, onRemoveFromCollection, isInArmy }) => {
+const BotCard = ({ bot, onAddToArmy, onRemoveFromCollection, onRemoveFromArmy, isInArmy }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   // Toggling the visibility of bot details
   const handleToggleDetails = () => {
     setShowDetails(!showDetails);
+  };
+
+  // Handle removal from collection
+  const handleRemove = () => {
+    if (isInArmy) {
+      onRemoveFromArmy(bot); // Remove from army if present in army
+    } else {
+      onRemoveFromCollection(bot); // Remove from collection if present in collection
+    }
   };
 
   return (
@@ -30,9 +39,14 @@ const BotCard = ({ bot, onAddToArmy, onRemoveFromCollection, isInArmy }) => {
         </div>
       )}
       {isInArmy ? (
-        <button onClick={() => onRemoveFromCollection(bot)}>Remove from Army</button>
+        <button onClick={() => onRemoveFromArmy(bot)}>Remove from Army</button>
       ) : (
         <button onClick={() => onAddToArmy(bot)}>Add to Army</button>
+      )}
+      {!isInArmy && (
+        <button className="remove-button" onClick={handleRemove}>
+          X
+        </button>
       )}
     </div>
   );
