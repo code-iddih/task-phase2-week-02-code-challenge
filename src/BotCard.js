@@ -44,9 +44,9 @@ const BotCard = ({ bot, onAddToArmy, onRemoveFromCollection, onRemoveFromArmy, i
 
       {/* Conditional rendering for add or remove buttons */}
       {isInArmy ? (
-        <button className="remove-from-army-button" onClick={() => onRemoveFromArmy(bot)}>Release</button>
+        <button id='release' className="remove-from-army-button" onClick={() => onRemoveFromArmy(bot)}>Release</button>
       ) : (
-        <button onClick={() => onAddToArmy(bot)}>Add to Army</button>
+        <button id='add' onClick={() => onAddToArmy(bot)}>Add to Army</button>
       )}
 
       {/* Red "X" button to remove bot */}

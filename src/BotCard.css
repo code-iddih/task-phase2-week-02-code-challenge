@@ -40,7 +40,7 @@
 }
 
 button {
-  background-color: green;
+  background-color: grey;
   border: none;
   color: white;
   padding: 10px;
@@ -48,9 +48,15 @@ button {
   cursor: pointer;
   margin: 5px;
 }
+#add {
+  background-color: green;
+}
+#add:hover  {
+  background-color: green;
+}
 
 button:hover {
-  background-color: #0056b3;
+  background-color: black;
 }
 
 .remove-button {
@@ -70,7 +76,7 @@ button:hover {
 }
 
 .remove-from-army-button {
-  background-color: #ff4d4d; 
+  background-color: #cc0000; 
   color: white;
   border: none;
   padding: 10px;
@@ -79,9 +85,10 @@ button:hover {
   margin: 5px;
 }
 
-.remove-from-army-button:hover {
-  background-color: #cc0000; 
+#release:hover {
+  background-color: #cc0000;
 }
+
 
 span {
   font-weight: bolder;
